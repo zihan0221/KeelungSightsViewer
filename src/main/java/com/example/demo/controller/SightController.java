@@ -16,6 +16,7 @@ import com.example.demo.service.SightService;
 @RestController
 public class SightController {
     
+    @Autowired
     private final SightService sightService;
     
 
