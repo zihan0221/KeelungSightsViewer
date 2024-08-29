@@ -3,7 +3,7 @@ function fetchData(zone) {
     //console.log("asdasdasd");
     const myDiv = document.getElementById('buttons');
     myDiv.innerHTML = `<button type="button" class="btn btn-primary" onclick="reset()">回選項</button>`;
-    fetch(`http://127.0.0.1:8080/SightAPI?zone=`+zone)
+    fetch(`/SightAPI?zone=`+zone)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok ' + response.statusText);
