@@ -17,13 +17,8 @@ import com.example.demo.service.SightService;
 public class SightController {
     
     @Autowired
-    private final SightService sightService;
+    private  SightService sightService;
     
-
-    @Autowired
-    public SightController(SightService sightService){
-        this.sightService=sightService;
-    }
 
 
     @GetMapping("/SightAPI")
@@ -32,7 +27,7 @@ public class SightController {
     ) throws Exception{
         String keyword = param.getZone();
         keyword=keyword+"區";
-        List<Sight>values=this.sightService.getSightsByZone(keyword);
+        List<Sight>values=sightService.getSightsByZone(keyword);
         if (values != null) {
             return ResponseEntity.ok(values);
         } else {
